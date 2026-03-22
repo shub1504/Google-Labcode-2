@@ -19,6 +19,9 @@ The dataset used in this project is:
 
 ---
 
+
+![Architecture](image.png)
+
 ## ⚙️ Workflow
 
 This project follows a step-by-step approach:

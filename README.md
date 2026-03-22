@@ -222,5 +222,6 @@ This project is based on a hands-on codelab for learning MCP + BigQuery integrat
 
 ## Reference docs
 [MCP Toolbox for database](https://github.com/googleapis/genai-toolbox)
+
 [BigQuery public Datasets](https://docs.cloud.google.com/bigquery/public-data?utm_campaign=CDR_0xd466e25b_awareness&utm_source=external&utm_medium=web)
 

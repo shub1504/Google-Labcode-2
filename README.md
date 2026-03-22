@@ -113,6 +113,9 @@ Now, we need to define our BigQuery dataset and tools in the tools.yaml file tha
 Use nano tools.yaml and Create a file named tools.yaml in the same folder i.e. mcp-toolbox
 whose content is in:
 
+[Configuration Code](https://github.com/shub1504/Google-Labcode-2/blob/main/mcp-toolbox/tools.yaml)
+
+and run the MCP Toolbox via the following command
 ```bash
 ./toolbox --tools_file "tools.yaml"
 ```
@@ -137,15 +140,50 @@ whose content is in:
 * Agent will respond using BigQuery data
 
 ---
+### Install the Agent Development Kit (ADK)
 
-## 📸 Screenshots (Optional)
+Create a folder named my-agents followed by a virtual environment and then activate your venv with 
+```bash
+source .venv/bin/activate
+```
+Install the ADK and the MCP Toolbox for Databases packages
+ 
+```bash
+pip install google-adk toolbox-core
+```
+You can now invoke adk successfully 
 
-*Add your screenshots here*
+We will now create a scaffolding for Google Cloud Release Notes Agent Application via the adk create command 
 
-```markdown
-![UI Screenshot](assets/ui.png)
+```bash
+adk create gcp_releasenotes_agent_app
+```
+Choose gemini-2.5-flask and Vertex AI as your root agent and backend models 
+
+Enter your Google Cloud Project ID and Google Cloud region as follows:
+
+Enter Google Cloud project ID [YOUR_GOOGLE_PROJECT_ID]: 
+
+Enter Google Cloud region [us-central1]: 
+
+### Modify agent.py 
+Modify agent. py with 
+
+[Code](https://github.com/shub1504/Google-Labcode-2/blob/main/mcp-toolbox/agent.py)
+
+We can now test the Agent that will fetch real data from our BigQuery dataset that has been configured with the MCP Toolbox for Databases.
+
+In one terminal of Cloud Shell, launch the MCP Toolbox for Databases.
+
+```bash
+./toolbox --tools_file "tools.yaml"
 ```
 
+Once the MCP server has started successfully, in another terminal, launch the Agent via the adk run
+
+```bash
+adk run gcp_releasenotes_agent_app/
+```
 ---
 
 ## ✅ Final Outcome
@@ -181,17 +219,3 @@ You have successfully:
 This project is based on a hands-on codelab for learning MCP + BigQuery integration.
 
 ---
-
-## 💡 Author
-
-**Shubhangi Sharan**
-BSc Computer Science (H)
-
----
-
-If you want next level polish 🔥
-I can:
-
-* Add **architecture diagram section**
-* Add **badges (cool GitHub look)**
-* Or make it **hackathon-winning level README** 😏

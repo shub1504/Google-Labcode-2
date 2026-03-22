@@ -70,7 +70,7 @@ mcp-toolbox/
 │   ├── tools.yaml
 │   ├── agent.py
 │
-├── assets/              # (optional - for screenshots)
+├── assets/              
 ├── README.md
 ```
 
